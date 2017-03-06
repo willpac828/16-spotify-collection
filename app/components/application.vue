@@ -7,26 +7,30 @@
         </div>
 
       </div>
-      <div class="media">
-        <div class="media-left">
-          <img src="" alt="" class="media-img">
-        </div>
-        <div class="media-content">
-          <h2>Yeasayer</h2>
-          <p>Don't Come Close</p>
-        </div>
-        <div class="media-right">
-          <span class="icon is-small"><i class="fa fa-spotify" aria-hidden="true"></i></span>
-        </div>
-      </div>
+
+
     </div>
   </div>
 </template>
 
 <script>
+import SongItem from './song-item';
 export default {
+  components: {
+    SongItem,
+  },
+
+  created() {
+    fetch('https://api.spotify.com/v1/search?query=katy&type=track&offset=0&limit=20')
+    .then(response => response.json())
+    .then((tracks) => {
+      this.tracks = tracks;
+    });
+  },
+
   data() {
     return {
+      tracks: [],
     };
   },
 
