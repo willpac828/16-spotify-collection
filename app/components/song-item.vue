@@ -1,11 +1,12 @@
 <template lang="html">
-  <div class="media">
+    // we can call track anything
+  <div v-for="track in tracks" class="media">
     <div class="media-left">
-      <img src="" alt="" class="media-img">
+      <img src="#" alt="" class="media-img">
     </div>
     <div class="media-content">
-      <h2>Yeasayer</h2>
-      <p>Don't Come Close</p>
+      <h2>{{tracks.items[0].album.artists[0].name}}</h2>
+      <p>{{tracks.items[0].album.name}}</p>
     </div>
     <div class="media-right">
       <span class="icon is-small"><i class="fa fa-spotify" aria-hidden="true"></i></span>
