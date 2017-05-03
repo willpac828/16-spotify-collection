@@ -9,6 +9,10 @@ $white: hsl(0, 0%, 21%);
 @import 'bulma';
 @import 'font-awesome';
 
+.is-fullwidth {
+  width: 100%;
+}
+
 .page {
   display: flex;
   flex-direction: column;
